@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #second {
+      position: fixed;
+      /*设置元素为固定定位*/
+      top: 30px;
+      /*距离浏览器顶部30px*/
+
+      /*距离浏览器左部160px*/
+      width: 100%;
+      height: auto;
+
+    }
+
+    .kuang {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* z-index: -10; */
+      background-image: linear-gradient(180deg, rgb(50, 97, 228), rgb(78, 168, 241));
+
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 70%;
+      border: 0px solid #fff;
+      box-shadow: inset 0 0 0px #fff;
+      animation: flutter 10s infinite;
+      opacity: 0;
+    }
+
+    @keyframes flutter {
+      100% {
+        transform: translateX(-50px);
+        bottom: 100px;
+        opacity: 1.5;
+      }
+
+      50% {
+        transform: translateX(100px);
+        opacity: 1.6;
+      }
+
+
+      10% {
+        transform: translateX(5px);
+        bottom: 100%;
+        opacity: 0;
+
+      }
+    }
+
+    .bubble:nth-child(1) {
+      left: 10%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 9s;
+      animation-delay: 0.1s;
+    }
+
+    .bubble:nth-child(2) {
+      left: 15%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 6s;
+      animation-delay: 1.5s;
+
+    }
+
+    .bubble:nth-child(3) {
+      left: 20%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 10s;
+
+
+
+    }
+
+    .bubble:nth-child(4) {
+      left: 30%;
+      width: 35px;
+      height: 35px;
+      animation-duration: 5.5s;
+      animation-delay: 1.5s;
+
+    }
+
+    .bubble:nth-child(5) {
+      left: 40%;
+      width: 50px;
+      height: 50px;
+      animation-duration: 12s;
+
+
+
+    }
+
+    .bubble:nth-child(6) {
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      animation-duration: 6s;
+      animation-delay: 1s;
+
+    }
+
+    .bubble:nth-child(7) {
+      left: 60%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 8s;
+      animation-delay: 1s;
+
+    }
+
+    .bubble:nth-child(8) {
+      left: 65%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 15s;
+
+    }
+
+    .bubble:nth-child(9) {
+      left: 80%;
+      width: 55px;
+      height: 55px;
+      animation-duration: 9s;
+      animation-delay: 0.5s;
+
+    }
+
+    .bubble:nth-child(10) {
+      left: 85%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 12s;
+      animation-delay: 0.5s;
+
+
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto;
+
+    }
+
+
+    }
+
+    /*  */
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+
+    .guang {
+      /* position: relative;
+    display: inline-block;*/
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      /*top: 70%;*/
+      left: 43%;
+      margin:35% auto;
+      width: 220px;
+      height: 80px;
+      color: rgb(255, 255, 255);
+      line-height: 80px;
+      font-size: 35px;
+      font-family: sans-serif;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 30px;
+      background: linear-gradient(90deg, rgb(39, 122, 218), rgb(74, 230, 121), rgb(201, 214, 13), rgb(226, 20, 233), rgb(16, 172, 219));
+      background-size: 400%;
+      z-index: 1;
+      text-shadow: 0 0 5px white,
+        0 0 5px white;
+    }
+
+    .guang:hover {
+      animation: move 5s linear alternate infinite;
+    }
+
+    @keyframes move {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 100%;
+      }
+    }
+
+    .guang::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 240px;
+      height: 100px;
+      background: linear-gradient(90deg, rgb(39, 122, 218), rgb(74, 230, 121), rgb(243, 169, 10), rgb(226, 20, 233), rgb(16, 172, 219));
+      background-size: 400%;
+      opacity: 0;
+      z-index: -1;
+      border-radius: 45px;
+      transition: 0.6s;
+
+
+    }
+
+    .guang:hover::before {
+      filter: blur(15px);
+      opacity: 1;
+      animation: move 8s linear alternate infinite;
+    }
+
+
+
+    /*  */
+    .container {
+      /*position: absolute;
+      top: 25%;
+      left: 32%;*/
+      margin:11% auto;
+      border: 0px solid #568bc7;
+      width: 800px;
+      height: 300px;
+      overflow: hidden;
+
+    }
+
+    .container ul {
+      display: flex;
+    }
+
+    .container li {
+      width: 160px;
+      height: 300px;
+      list-style: none;
+      border-left: 1px solid #194b8d;
+      box-shadow: 0 0 0px #000;
+      transition: all 0.5s;
+    }
+
+    .container li img {
+      display: block;
+      display: block;
+      width: 800px;
+      height: 300px;
+    }
+
+    .container ul:hover li {
+      width: 40px;
+    }
+
+    .container ul li:hover {
+      width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <class class="kuang">
+    <div id="second"><img src="top.png" alt=""></div>
+    <div class="bubble"><img src="red1.png"></div>
+    <div class="bubble"><img src="red2.png"></div>
+    <div class="bubble"><img src="red3.png"></div>
+    <div class="bubble"><img src="red4.png"></div>
+    <div class="bubble"><img src="red5.png"></div>
+    <div class="bubble"><img src="red6.png"></div>
+    <div class="bubble"><img src="red7.png"></div>
+    <div class="bubble"><img src="red8.png"></div>
+    <div class="bubble"><img src="red9.png"></div>
+    <!-- <div class="bubble"><img src="red10.png"></div> -->
+
+
+    <!-- 按钮 -->
+    <div><a href="冬奥介绍02.html" class="guang" target="_blank">冬奥之旅</a></div>
+
+    <!--  -->
+    <div>
+      <div class="container">
+        <ul>
+          <li><img src="1.png" style="border-radius: 10%" alt=""></li>
+          <li><img src="2.jpg" style="border-radius: 10%" alt=""></li>
+          <li><img src="3.png" style="border-radius: 10%" alt=""></li>
+          <li><img src="4.jpg" style="border-radius: 10%" alt=""></li>
+          <li><img src="5.jpg" style="border-radius: 10%" alt=""></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!--  -->
+  </class>
+
+  </div>
+
+
+
+
+</body>
+
+</html>
